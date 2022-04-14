@@ -8,9 +8,9 @@ import "../styles/index.css";
 //import your own components
 import Home from "./component/home.jsx";
 
-setInterval(function () {
-	element.innerHTML += "Hello";
-}, 1000);
+// setInterval(function () {
+// 	element.innerHTML += "Hello";
+// }, 1000);
 
 //render your react application
 ReactDOM.render(
