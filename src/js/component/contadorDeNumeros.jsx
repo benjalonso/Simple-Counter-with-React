@@ -1,50 +1,55 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const Numero = (props) => {
+export const Contador = (props) => {
 	return (
-		<>
-			<div className="col">
-				<p className="bg-dark fs-1 p-3 text-white text-center rounded">
-					{props.number6}
+		<div className=" container-fluid bg-secondary row w-50 m-auto my-5 p-4">
+			<div className="col ">
+				<p className="bg-dark fs-1 p-3 rounded">
+					<i className="fa-solid fa-clock text-white fs-1 "></i>
 				</p>
 			</div>
 			<div className="col">
 				<p className="bg-dark fs-1 p-3 text-white text-center rounded">
-					{props.number5}
+					{props.centenaDeMil}
 				</p>
 			</div>
 			<div className="col">
 				<p className="bg-dark fs-1 p-3 text-white text-center rounded">
-					{props.number4}
+					{props.decenaDeMil}
 				</p>
 			</div>
 			<div className="col">
 				<p className="bg-dark fs-1 p-3 text-white text-center rounded">
-					{props.number3}
+					{props.unidadDeMil}
 				</p>
 			</div>
 			<div className="col">
 				<p className="bg-dark fs-1 p-3 text-white text-center rounded">
-					{props.number2}
+					{props.centena}
 				</p>
 			</div>
 			<div className="col">
 				<p className="bg-dark fs-1 p-3 text-white text-center rounded">
-					{props.number1}
+					{props.decena}
 				</p>
 			</div>
-		</>
+			<div className="col">
+				<p className="bg-dark fs-1 p-3 text-white text-center rounded">
+					{props.unidad}
+				</p>
+			</div>
+		</div>
 	);
 };
 
-Numero.protoTypes = {
-	number1: PropTypes.number,
-	number2: PropTypes.number,
-	number3: PropTypes.number,
-	number4: PropTypes.number,
-	number5: PropTypes.number,
-	number6: PropTypes.number,
+Contador.protoTypes = {
+	unidad: PropTypes.number,
+	decena: PropTypes.number,
+	centena: PropTypes.number,
+	unidadDeMil: PropTypes.number,
+	decenaDeMil: PropTypes.number,
+	centenaDeMil: PropTypes.number,
 };
 
-export default Numero;
+export default Contador;
