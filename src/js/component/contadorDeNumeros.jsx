@@ -41,22 +41,6 @@ export const Contador = (props) => {
 					</p>
 				</div>
 			</div>
-			<div className="container-fluid row mx-auto">
-				<div
-					className="btn-group col-6 mx-auto "
-					role="group"
-					aria-label="Basic example">
-					<button type="button" className="btn btn-primary">
-						Start
-					</button>
-					<button type="button" className="btn btn-success">
-						Stop
-					</button>
-					<button type="button" className="btn btn-danger">
-						Reset
-					</button>
-				</div>
-			</div>
 		</>
 	);
 };

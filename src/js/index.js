@@ -13,40 +13,66 @@ let third = 0;
 let fourth = 0;
 let fifth = 0;
 let sixth = 0;
-setInterval(() => {
-	if (first === 9) {
-		first = 0;
-		second++;
+let start = document.getElementById("start");
+let stop = document.getElementById("stop");
+let a;
+
+ReactDOM.render(
+	<Contador
+		unidad={first}
+		decena={second}
+		centena={third}
+		unidadDeMil={fourth}
+		decenaDeMil={fifth}
+		centenaDeMil={sixth}
+	/>,
+	iniciarContinuar(),
+	detener(),
+	document.querySelector("#app")
+);
+
+function iniciarContinuar() {
+	start.addEventListener("click", (e) => {
+		a = setInterval(() => {
+			if (first === 9) {
+				first = 0;
+				second++;
+			}
+			if (second == 9) {
+				second = 0;
+				third++;
+			}
+			if (third == 9) {
+				third = 0;
+				fourth++;
+			}
+			if (fourth == 9) {
+				fourth = 0;
+				fifth++;
+			}
+			if (fifth == 9) {
+				fifth = 0;
+				sixth++;
+			}
+			if (sixth == 9) {
+				sixth = 0;
+			}
+			first++;
+			ReactDOM.render(
+				<Contador
+					unidad={first}
+					decena={second}
+					centena={third}
+					unidadDeMil={fourth}
+					decenaDeMil={fifth}
+					centenaDeMil={sixth}
+				/>,
+				document.querySelector("#app")
+			);
+		}, 1000);
+	});
+	stop.addEventListener("click");
+	{
+		clearInterval(a);
 	}
-	if (second == 9) {
-		second = 0;
-		third++;
-	}
-	if (third == 9) {
-		third = 0;
-		fourth++;
-	}
-	if (fourth == 9) {
-		fourth = 0;
-		fifth++;
-	}
-	if (fifth == 9) {
-		fifth = 0;
-		sixth++;
-	}
-	if (sixth == 9) {
-		sixth = 0;
-	}
-	first++;
-	ReactDOM.render(
-		<Contador
-			unidad={first}
-			decena={second}
-			centena={third}
-			unidadDeMil={fourth}
-			decenaDeMil={fifth}
-			centenaDeMil={sixth}
-		/>,
-		document.querySelector("#app")
-	);
-}, 100);
+}
