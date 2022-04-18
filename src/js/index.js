@@ -15,6 +15,8 @@ let fifth = 0;
 let sixth = 0;
 let start = document.getElementById("start");
 let stop = document.getElementById("stop");
+let reset = document.getElementById("reset");
+let countdown = document.getElementById("countdown");
 let a;
 
 ReactDOM.render(
@@ -28,6 +30,7 @@ ReactDOM.render(
 	/>,
 	iniciarContinuar(),
 	detener(),
+	reiniciar(),
 	document.querySelector("#app")
 );
 
@@ -76,5 +79,23 @@ function iniciarContinuar() {
 function detener() {
 	stop.addEventListener("click", (e) => {
 		clearInterval(a);
+	});
+}
+
+function reiniciar() {
+	reset.addEventListener("click", (e) => {
+		clearInterval(a);
+
+		ReactDOM.render(
+			<Contador
+				unidad={0}
+				decena={0}
+				centena={0}
+				unidadDeMil={0}
+				decenaDeMil={0}
+				centenaDeMil={0}
+			/>,
+			document.querySelector("#app")
+		);
 	});
 }
