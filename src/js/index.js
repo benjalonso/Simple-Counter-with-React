@@ -71,8 +71,10 @@ function iniciarContinuar() {
 			);
 		}, 1000);
 	});
-	stop.addEventListener("click");
-	{
+}
+
+function detener() {
+	stop.addEventListener("click", (e) => {
 		clearInterval(a);
-	}
+	});
 }
